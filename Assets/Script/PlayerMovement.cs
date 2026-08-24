@@ -1,8 +1,11 @@
 using UnityEngine;
+using UnityEngine.UI;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float SpinSpeed;
     [SerializeField] bool isSpinning;
+    [SerializeField] Text coinText;
+    private int coinCount;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -38,4 +41,36 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
+
+    // public void OnTriggerEnter2D(Collider2D other)
+    // {   
+    //     if(other.gameObject.CompareTag("coin")&& Input.touchCount==1 && Input.GetTouch(0).phase == TouchPhase.Began)
+    //     {
+    //         Destroy(other.gameObject);
+    //         coinCount++;
+    //         coinText.text = coinCount.ToString(); 
+    //     }
+
+    // }
+      public void OnTriggerStay2D(Collider2D other)
+    {   
+        if(other.gameObject.CompareTag("coin")&& Input.touchCount==1 && Input.GetTouch(0).phase == TouchPhase.Began)
+        {
+            Destroy(other.gameObject);
+            coinCount++;
+            coinText.text = coinCount.ToString(); 
+        }
+
+    }
+    //   public void OnTriggerExit2D(Collider2D other)
+    // {   
+    //     if(other.gameObject.CompareTag("coin")&& Input.touchCount==1 && Input.GetTouch(0).phase == TouchPhase.Began)
+    //     {
+    //         Destroy(other.gameObject);
+    //         coinCount++;
+    //         coinText.text = coinCount.ToString(); 
+    //     }
+
+    // }
+
 }
