@@ -42,17 +42,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    // public void OnTriggerEnter2D(Collider2D other)
-    // {   
-    //     if(other.gameObject.CompareTag("coin")&& Input.touchCount==1 && Input.GetTouch(0).phase == TouchPhase.Began)
-    //     {
-    //         Destroy(other.gameObject);
-    //         coinCount++;
-    //         coinText.text = coinCount.ToString(); 
-    //     }
-
-    // }
-      public void OnTriggerStay2D(Collider2D other)
+      public void OnTriggerEnter2D(Collider2D other)
     {   
         if(other.gameObject.CompareTag("coin")&& Input.touchCount==1 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
@@ -62,15 +52,6 @@ public class PlayerMovement : MonoBehaviour
         }
 
     }
-    //   public void OnTriggerExit2D(Collider2D other)
-    // {   
-    //     if(other.gameObject.CompareTag("coin")&& Input.touchCount==1 && Input.GetTouch(0).phase == TouchPhase.Began)
-    //     {
-    //         Destroy(other.gameObject);
-    //         coinCount++;
-    //         coinText.text = coinCount.ToString(); 
-    //     }
-
-    // }
+    
 
 }
